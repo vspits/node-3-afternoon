@@ -1,6 +1,6 @@
 const users = require('../models/users')
 
-const id = 1
+let id = 1
 module.exports = {
     login: (req, res, next) => {
         const {body: {username, password}, session} = req
@@ -20,7 +20,8 @@ module.exports = {
         const { username, password } = req.body
         users.push({id, username, password})
         id++
-        session.user.username = usernameres.status(200).send(session.user)
+        session.user.username = username
+        res.status(200).send(session.user)
     },
     signout: (req, res, next) => {
         const { session } = req
