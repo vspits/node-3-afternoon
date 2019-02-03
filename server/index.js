@@ -24,6 +24,7 @@ app.use(session({
     saveUninitialized: false
 }))
 app.use(checkForSession)
+app.use(express.static(`${__dirname}/../build`))
 
 
 // // // ENDPOINTS // // //
@@ -36,7 +37,7 @@ app.get(`/api/user`, auth_controller.getUser)
 app.post(`/api/cart`, cart_controller.add)
 app.post(`/api/car/checkout`, cart_controller.checkout)
 app.delete(`/api/cart`, cart_controller.delete)
-
+app.get(`/api/search`, search_controller.search)
 
 // // // SERVER MAGIC // // //
 
