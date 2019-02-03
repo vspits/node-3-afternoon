@@ -10,6 +10,7 @@ const swag_controller = require('./controllers/swag_controller')
 const checkForSession = require('./middlewares/checkForSession')
 const auth_controller = require('./controllers/auth_controller')
 const cart_controller = require('./controllers/cart_controller')
+const search_controller = require('./controllers/search_controller')
 
 const app = express()
 
